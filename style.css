@@ -1,0 +1,17 @@
+h1 {
+    text-align: center;
+}
+
+#block-container {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: repeat(16, 1fr);
+    width: 500px;
+    height: 500px;
+    border: 2px solid black;
+    margin: auto;
+}
+
+.block {
+    border: none;
+}
