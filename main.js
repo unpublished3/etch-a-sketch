@@ -9,6 +9,7 @@ const color = document.getElementById("color");
 const clear = document.getElementById("clear");
 
 const slider = document.getElementById("slider");
+const size = document.getElementById("size");
 
 let blocks = [];
 let colorValue = 1;
@@ -90,4 +91,5 @@ slider.addEventListener("change", (e) => {
       updateColor(blocks[i]);
     });
   }
+  size.textContent = `${slider.value} × ${slider.value}`;
 });
