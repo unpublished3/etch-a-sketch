@@ -55,18 +55,30 @@ for (let i = 0; i < Number(slider.value) ** 2; i++) {
 // Change the preferred mode
 color.addEventListener("click", () => {
   colorValue = 1;
+  rainbow.classList.remove("active");
+  eraser.classList.remove("active");
+  color.classList.add("active");
 });
 
 rainbow.addEventListener("click", () => {
   colorValue = 2;
+  rainbow.classList.add("active");
+  eraser.classList.remove("active");
+  color.classList.remove("active");
 });
 
 colorPicker.addEventListener("change", () => {
   colorValue = 1;
+  rainbow.classList.remove("active");
+  eraser.classList.remove("active");
+  color.classList.add("active");
 });
 
 eraser.addEventListener("click", () => {
   colorValue = 3;
+  rainbow.classList.remove("active");
+  eraser.classList.add("active");
+  color.classList.remove("active");
 });
 
 clear.addEventListener("click", () => {
