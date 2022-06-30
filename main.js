@@ -3,9 +3,10 @@ const grid = document.getElementById("block-container");
 
 const colorPicker = document.getElementById("color-picker");
 
-const black = document.getElementById("black");
-const random = document.getElementById("random");
-const custom = document.getElementById("custom");
+const eraser = document.getElementById("eraser");
+const rainbow = document.getElementById("rainbow");
+const color = document.getElementById("color");
+const clear = document.getElementById("clear");
 
 const slider = document.getElementById("slider");
 
@@ -31,11 +32,11 @@ function updateGridSize() {
 // Update color of blocks
 function updateColor(block) {
   if (colorValue === 1) {
-    block.style.backgroundColor = "black";
-  } else if (colorValue === 2) {
     block.style.backgroundColor = colorPicker.value;
-  } else {
+  } else if (colorValue === 2) {
     block.style.backgroundColor = getRandomColor();
+  } else {
+    block.style.backgroundColor = "white";
   }
 }
 
@@ -50,21 +51,27 @@ for (let i = 0; i < Number(slider.value) ** 2; i++) {
   });
 }
 
-// Change the preferred color
-black.addEventListener("click", () => {
+// Change the preferred mode
+color.addEventListener("click", () => {
   colorValue = 1;
 });
 
-custom.addEventListener("click", () => {
+rainbow.addEventListener("click", () => {
   colorValue = 2;
-});
-
-random.addEventListener("click", () => {
-  colorValue = 3;
 });
 
 colorPicker.addEventListener("change", () => {
-  colorValue = 2;
+  colorValue = 1;
+});
+
+eraser.addEventListener("click", () => {
+  colorValue = 3;
+});
+
+clear.addEventListener("click", () => {
+  blocks.forEach((block) => {
+    block.style.backgroundColor = "white";
+  });
 });
 
 // Change the size and number of gird on changing slider
