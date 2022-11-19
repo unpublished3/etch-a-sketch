@@ -88,7 +88,7 @@ clear.addEventListener("click", () => {
 });
 
 // Change the size and number of gird on changing slider
-slider.addEventListener("change", (e) => {
+slider.addEventListener("input", (e) => {
   grid.innerHTML = "";
 
   blocks = [];
